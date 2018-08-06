@@ -1,0 +1,29 @@
+server:
+  port: 8088
+
+logging:
+  level:
+    learning: trace
+
+spring:
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: 20140300201
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    connectionProperties: druid.stat.mergeSql=true
+
+mybatis:
+
+  type-aliases-package: com.dky.eureka.domain
+
+  mapper-locations: classpath:com/dky/eureka/persistence/**/*.xml
+
+  pagehelper:
+      helperDialect: Mysql
+      reasonable: true
+      supportMethodsArguments: true
+      pageSizeZero: true
+      params: count=countSql
